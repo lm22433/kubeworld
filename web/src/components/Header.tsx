@@ -7,7 +7,6 @@ import {
 } from "solid-icons/tb";
 import Brand from "./Brand";
 
-// Plain icon + text links; the current page gets bright text.
 const link =
   "flex items-center gap-1.5 text-[15px] font-medium transition hover:text-ink-1";
 

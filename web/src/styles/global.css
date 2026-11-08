@@ -10,8 +10,6 @@
   --color-void: #05070f;
 }
 
-/* Background aurora blob: a radial gradient shaped like a heavily blurred disc.
-   `scale` grows the box to cover the spill a real blur would add. */
 .blob {
   position: absolute;
   aspect-ratio: 1;
@@ -37,7 +35,6 @@
   }
 }
 
-/* Lava-lamp loops: translate / scale / rotate only, so they stay on the compositor. */
 @keyframes lava-a {
   0%,
   100% {
