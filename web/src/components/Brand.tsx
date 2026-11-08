@@ -7,10 +7,10 @@ export default function Brand() {
       href="/"
       end
       aria-label="Kubeworld Home"
-      class="inline-flex items-center gap-2 text-[14px] font-semibold text-ink-1"
+      class="inline-flex items-center gap-1.5 text-[16px] font-semibold text-ink-1"
     >
-      <img src={logoUrl} alt="" class="size-6" />
-      Kubeworld
+      <img src={logoUrl} alt="" class="size-8" />
+      <span class="[text-box:trim-both_cap_alphabetic]">Kubeworld</span>
     </A>
   );
 }
