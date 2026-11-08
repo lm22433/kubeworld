@@ -3,7 +3,95 @@
 @theme {
   --color-ink-1: #f4f4f5;
   --color-ink-2: #a1a1aa;
-  --color-ink-3: #71717a;
+  --color-ink-3: #8b8b95;
   --color-pink: #ff3d8b;
   --color-purple: #8b5cf6;
+  --color-blue: #2b6bff;
+  --color-void: #05070f;
+}
+
+/* Background aurora blob: a radial gradient shaped like a heavily blurred disc.
+   `scale` grows the box to cover the spill a real blur would add. */
+.blob {
+  position: absolute;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  scale: 1.35;
+  background: radial-gradient(
+    closest-side,
+    var(--c) 0%,
+    color-mix(in srgb, var(--c) 92%, transparent) 30%,
+    color-mix(in srgb, var(--c) 72%, transparent) 50%,
+    color-mix(in srgb, var(--c) 44%, transparent) 67%,
+    color-mix(in srgb, var(--c) 18%, transparent) 83%,
+    color-mix(in srgb, var(--c) 5%, transparent) 93%,
+    transparent 100%
+  );
+  animation: var(--anim);
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blob {
+    animation: none;
+  }
+}
+
+/* Lava-lamp loops: translate / scale / rotate only, so they stay on the compositor. */
+@keyframes lava-a {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1, 1) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(7%, 16%, 0) scale(1.22, 0.86) rotate(14deg);
+  }
+  50% {
+    transform: translate3d(16%, 4%, 0) scale(0.88, 1.26) rotate(-9deg);
+  }
+  75% {
+    transform: translate3d(5%, -12%, 0) scale(1.14, 0.96) rotate(20deg);
+  }
+}
+@keyframes lava-b {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1.04, 0.96) rotate(0deg);
+  }
+  30% {
+    transform: translate3d(-12%, 18%, 0) scale(0.86, 1.3) rotate(-16deg);
+  }
+  60% {
+    transform: translate3d(-4%, 32%, 0) scale(1.3, 0.84) rotate(11deg);
+  }
+  85% {
+    transform: translate3d(-15%, 9%, 0) scale(0.94, 1.12) rotate(-6deg);
+  }
+}
+@keyframes lava-c {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1, 1) rotate(0deg);
+  }
+  28% {
+    transform: translate3d(10%, -20%, 0) scale(1.18, 0.9) rotate(9deg);
+  }
+  55% {
+    transform: translate3d(-6%, -30%, 0) scale(0.84, 1.24) rotate(-13deg);
+  }
+  80% {
+    transform: translate3d(-14%, -8%, 0) scale(1.1, 1.02) rotate(5deg);
+  }
+}
+@keyframes lava-d {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(0.98, 1.02) rotate(0deg);
+  }
+  35% {
+    transform: translate3d(-18%, -14%, 0) scale(1.32, 0.82) rotate(-21deg);
+  }
+  70% {
+    transform: translate3d(8%, -26%, 0) scale(0.9, 1.2) rotate(16deg);
+  }
 }
