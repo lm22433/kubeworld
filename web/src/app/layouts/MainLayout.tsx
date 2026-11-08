@@ -1,6 +1,6 @@
 import type { RouteSectionProps } from "@solidjs/router";
-import Header from "../../components/Header";
 import Background from "../../components/Background";
+import Header from "../../components/Header";
 
 export default function MainLayout(props: RouteSectionProps) {
   return (
