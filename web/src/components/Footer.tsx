@@ -1,3 +1,4 @@
+import { SiGithub } from "solid-icons/si";
 import Brand from "./Brand";
 
 export default function Footer() {
@@ -8,7 +9,11 @@ export default function Footer() {
           <Brand />
           <span class="text-ink-3">© {new Date().getFullYear()}</span>
         </div>
-        <a href="https://github.com/lm22433/kubeworld" class="hover:text-ink-1">
+        <a
+          href="https://github.com/lm22433/kubeworld"
+          class="flex items-center gap-1.5 hover:text-ink-1"
+        >
+          <SiGithub size={14} aria-hidden="true" />
           GitHub
         </a>
       </div>
